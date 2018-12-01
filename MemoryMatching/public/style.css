@@ -8,5 +8,14 @@ body {
 	margin: 0;
 	background: rgb(15%, 15%, 15%);
 	font-family: sans-serif;
-	transition: .6s;
+	/* transition: .6s; */
+}
+#game {
+	width: 95%;
+	text-align: center;
+	margin: 10px auto 0 auto;
+	border: 1px solid black;
+	border-radius: 20px;
+	background: linear-gradient(rgba(70%, 70%, 70%, .2), rgba(70%, 70%, 70%, .3));
+	box-shadow: 2px 2px 1px gray;
 }

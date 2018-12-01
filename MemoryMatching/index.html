@@ -10,11 +10,17 @@
   <body>
     <!-- Main section containing all the content -->
     <section class="memory-game">
-      <!-- div containing card -->
-      <div class="memory-card">
-        <img class="back-face" src="./public/back.jpg" /> 
-        <img class="front-face" src="" />
-      </div>
+            <div id="game">
+                    <div id="settings">
+                        <p>Number of tiles (<span>10</span>)</p>
+                        <input type="range" value="10" min="10" max="30" step="2">
+                        <button name="reset">Reset</button>
+                        <button name="start">Start</button>
+                    </div>
+                    
+                    <div id="play-area"></div>
+                </div>
     </section>
+    <script src="./public/script.js"></script>
   </body>
 </html>

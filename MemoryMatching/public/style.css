@@ -4,26 +4,9 @@
     box-sizing: border-box;
 }
 
-body{
-    height: 100vh;
-    background: yellowgreen;
+body {
+	margin: 0;
+	background: rgb(15%, 15%, 15%);
+	font-family: sans-serif;
+	transition: .6s;
 }
-.memory-game{
-    width: 640px;
-    height: 640px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-   
-    /* perspective: 1000px; */
-}
-.memory-card {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
-    margin: 10px;
-    position: relative;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-    transform: scale(1);
-   transform-style: preserve-3d;
-   overflow: hidden;
-  }

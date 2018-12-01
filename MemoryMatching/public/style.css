@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+#winScreen p {
+	color: white;
+	font-size: 60px;
+	transform: translateY(-70vh);
+	user-select: none;
+	text-shadow: 2px 2px 0 black;
+	animation: textDrop 2s;
+}
 body {
 	margin: 0;
 	background: rgb(15%, 15%, 15%);
@@ -48,4 +56,28 @@ body {
 	border: 1px solid;
 	background: linear-gradient(rgba(255, 0, 0, .6), brown);
 	cursor: pointer;
+}
+.matched {
+	border-radius: 50%;
+	transition: 1s;
+	background: blue;
+}
+
+.matched p {
+	filter: blur(0px);
+}
+
+@keyframes textDrop {
+	0% {
+		transform: translateY(-70vh);
+	}
+	10% {
+		transform: translateY(-12vh);
+	}
+	90% {
+		transform: translateY(12vh);
+	}
+	100% {
+		transform: translateY(110vh);
+	}
 }

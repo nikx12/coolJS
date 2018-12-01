@@ -12,4 +12,19 @@ window.onload = function() {
     startBtn = document.querySelector("#settings button[name=start]"),
     resetBtn = document.querySelector("#settings button[name=reset]"),
     playArea = document.querySelector("#play-area");
+
+  tilesInput.addEventListener("input", () => {
+    tilesNumber.innerHTML = tilesInput.value;
+  });
+
+  resetBtn.addEventListener('click', () => {
+    startBtn.removeAttribute('disabled', '');
+    tilesInput.removeAttribute('disabled', '');
+    playArea.innerHTML = '';
+});
+
+startBtn.addEventListener('click', () => {
+    startBtn.setAttribute('disabled', '');
+    tilesInput.setAttribute('disabled', '');
+});
 };

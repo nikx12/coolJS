@@ -1,11 +1,15 @@
+window.onload = function() {
+  // Fade in the body
+  document.querySelector("body").style.opacity = 0;
 
-function randomImg(){
-var randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber);
-var img= document.querySelectorAll(".back-face");
-for(var i= 1; i<=randomNumber;i++){
+  setTimeout(() => {
+    document.querySelector("body").style.opacity = 1;
+  });
 
-}
-}
-
-randomImg()
+  const body = document.querySelector("body"),
+    tilesNumber = document.querySelector("#settings p span"),
+    tilesInput = document.querySelector("#settings input"),
+    startBtn = document.querySelector("#settings button[name=start]"),
+    resetBtn = document.querySelector("#settings button[name=reset]"),
+    playArea = document.querySelector("#play-area");
+};

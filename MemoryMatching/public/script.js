@@ -13,6 +13,8 @@ window.onload = function() {
     resetBtn = document.querySelector("#settings button[name=reset]"),
     playArea = document.querySelector("#play-area");
 
+    console.log(startBtn, resetBtn)
+
   tilesInput.addEventListener("input", () => {
     tilesNumber.innerHTML = tilesInput.value;
   });
@@ -26,7 +28,7 @@ window.onload = function() {
   startBtn.addEventListener("click", () => {
     startBtn.setAttribute("disabled", "");
     tilesInput.setAttribute("disabled", "");
-  });
+ 
 
   // Create tiles
   for (let i = 0; i < tilesInput.value; i++) {
@@ -54,7 +56,9 @@ window.onload = function() {
       randomTile = document.querySelectorAll(".tile p")[randomNum];
     } while (randomTile.innerHTML && numsToAssign.length > 0);
   }
+  startGame()
 
+  });
   function startGame() {
     let tiles = document.querySelectorAll(".tile");
     let firstClickedTile;

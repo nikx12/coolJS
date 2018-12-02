@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+body {
+	margin: 0;
+	background: rgb(15%, 15%, 15%);
+	font-family: sans-serif;
+	/* transition: .6s; */
+}
+#winScreen {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	transition: background .4s;
+	overflow-y: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 #winScreen p {
 	color: white;
 	font-size: 60px;
@@ -11,12 +29,6 @@
 	user-select: none;
 	text-shadow: 2px 2px 0 black;
 	animation: textDrop 2s;
-}
-body {
-	margin: 0;
-	background: rgb(15%, 15%, 15%);
-	font-family: sans-serif;
-	/* transition: .6s; */
 }
 #game {
 	width: 95%;
@@ -57,6 +69,18 @@ body {
 	background: linear-gradient(rgba(255, 0, 0, .6), brown);
 	cursor: pointer;
 }
+
+.tile p {
+	font-size: 30px;
+	margin: 0;
+	padding: 35%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	filter: blur(20px);
+	user-select: none;
+}
+
 .matched {
 	border-radius: 50%;
 	transition: 1s;

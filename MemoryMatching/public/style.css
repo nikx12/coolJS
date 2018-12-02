@@ -56,12 +56,12 @@ body {
 	height: 26px;
 	cursor: pointer;
 }
-#play-area {
+#board-area {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.tile {
+.card {
 	height: 110px;
 	width: 110px;
 	margin: 20px;
@@ -70,7 +70,7 @@ body {
 	cursor: pointer;
 }
 
-.tile p {
+.card p {
 	font-size: 30px;
 	margin: 0;
 	padding: 35%;

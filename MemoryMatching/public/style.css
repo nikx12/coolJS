@@ -6,7 +6,7 @@
 
 body {
 	margin: 0;
-	background: rgb(15%, 15%, 15%);
+	background: rgb(132, 135, 151);
 	font-family: sans-serif;
 	/* transition: .6s; */
 }
@@ -34,14 +34,15 @@ body {
 	width: 95%;
 	text-align: center;
 	margin: 10px auto 0 auto;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	border-radius: 20px;
-	background: linear-gradient(rgba(70%, 70%, 70%, .2), rgba(70%, 70%, 70%, .3));
-	box-shadow: 2px 2px 1px gray;
+	background: linear-gradient(rgba(88, 90, 230, 0.2), rgba(178, 178, 178, 0.027));
+	box-shadow: 2px 2px 1px rgb(7, 7, 7);
 }
 #game {
 	min-height: 450px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;    
 }
 #settings {
 	font-size: 22px;
@@ -54,7 +55,12 @@ body {
 #settings button {
 	width: 60px;
 	height: 26px;
-	cursor: pointer;
+    cursor: pointer;
+	border-radius: 5px;    
+}
+#settings p{
+   font-style: italic;
+   padding-bottom: 5px;
 }
 #board-area {
 	display: flex;
@@ -65,8 +71,10 @@ body {
 	height: 110px;
 	width: 110px;
 	margin: 20px;
-	border: 1px solid;
-	background: linear-gradient(rgba(255, 0, 0, .6), brown);
+    border: 1px solid;
+    border-radius: 5%;
+    /* background: linear-gradient(rgba(255, 0, 0, .6), brown); */
+    background-image: url("./back.jpg");
 	cursor: pointer;
 }
 

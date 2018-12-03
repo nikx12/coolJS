@@ -73,8 +73,7 @@ body {
 	margin: 20px;
     border: 1px solid;
     border-radius: 5%;
-    /* background: linear-gradient(rgba(255, 0, 0, .6), brown); */
-    background-image: url("./back.jpg");
+    background-image: url("./back2.jpg");
 	cursor: pointer;
 }
 
@@ -86,13 +85,13 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 	filter: blur(20px);
-	user-select: none;
+	
 }
 
 .matched {
 	border-radius: 50%;
 	transition: 1s;
-	background: blue;
+	background: rgba(92, 77, 77, 0.548);
 }
 
 .matched p {
@@ -113,3 +112,4 @@ body {
 		transform: translateY(110vh);
 	}
 }
+

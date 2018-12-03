@@ -91,6 +91,8 @@ window.onload = function() {
         ) {
           firstClickedCard.classList.add("matched");
           secondClickedCard.classList.add("matched");
+        //   firstClickedCard.classList.add("flip");
+        //   secondClickedCard.classList.add("flip");
 
           firstClickedCard.removeEventListener("click", matching);
           secondClickedCard.removeEventListener("click", matching);
@@ -113,7 +115,7 @@ window.onload = function() {
         }, 400);
       }
     }
-    // Removes click events on cards to be able to see the second tile, then adds events back.
+    // Removes click events on cards to be able to see the second card, then adds events back.
     function cardsClickDelayAndWinCheck() {
       let notMatchedcards = 0;
 

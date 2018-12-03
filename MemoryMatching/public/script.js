@@ -13,7 +13,7 @@ window.onload = function() {
     resetBtn = document.querySelector("#settings button[name=reset]"),
     boardArea = document.querySelector("#board-area");
 
-    console.log(startBtn, resetBtn)
+  console.log(startBtn, resetBtn);
 
   cardsInput.addEventListener("input", () => {
     cardsNumber.innerHTML = cardsInput.value;
@@ -28,36 +28,34 @@ window.onload = function() {
   startBtn.addEventListener("click", () => {
     startBtn.setAttribute("disabled", "");
     cardsInput.setAttribute("disabled", "");
- 
 
-  // Create cards
-  for (let i = 0; i < cardsInput.value; i++) {
-    boardArea.innerHTML += '<div class="card"><p></p></div>';
-  }
+    // Create cards
+    for (let i = 0; i < cardsInput.value; i++) {
+      boardArea.innerHTML += '<div class="card"><p></p></div>';
+    }
 
-  // Push to `numsToAssign` all the numbers from 0 to `cardsInput / 2`
-  var numsToAssign = [];
+    // Push to `numsToAssign` all the numbers from 0 to `cardsInput / 2`
+    var numsToAssign = [];
 
-  for (let i = 0; i < cardsInput.value / 2; i++) {
-    numsToAssign.push(i, i);
-  }
+    for (let i = 0; i < cardsInput.value / 2; i++) {
+      numsToAssign.push(i, i);
+    }
 
-  // Assign each number of `numsToAssign` to each tile randomly
-  var randomNum = Math.floor(Math.random() * cardsInput.value);
-  var randomCard = document.querySelectorAll(".card p")[randomNum];
+    // Assign each number of `numsToAssign` to each tile randomly
+    var randomNum = Math.floor(Math.random() * cardsInput.value);
+    var randomCard = document.querySelectorAll(".card p")[randomNum];
 
-  for (let i = 0; i < cardsInput.value; i++) {
-    do {
-      if (!randomCard.innerHTML) {
-        randomCard.innerHTML = numsToAssign.shift();
-      }
+    for (let i = 0; i < cardsInput.value; i++) {
+      do {
+        if (!randomCard.innerHTML) {
+          randomCard.innerHTML = numsToAssign.shift();
+        }
 
-      randomNum = Math.floor(Math.random() * cardsInput.value);
-      randomCard = document.querySelectorAll(".card p")[randomNum];
-    } while (randomCard.innerHTML && numsToAssign.length > 0);
-  }
-  startGame()
-
+        randomNum = Math.floor(Math.random() * cardsInput.value);
+        randomCard = document.querySelectorAll(".card p")[randomNum];
+      } while (randomCard.innerHTML && numsToAssign.length > 0);
+    }
+    startGame();
   });
   function startGame() {
     let cards = document.querySelectorAll(".card");
@@ -68,7 +66,12 @@ window.onload = function() {
     for (let i = 0; i < cards.length; i++) {
       cards[i].addEventListener("click", matching);
     }
-
+    if (
+      localStorage.getItem("firstCard") &&
+      localStorage.getItem("secondCard")
+    ) {
+      //remove the click listener from that card and display its inner html as it is
+    }
     function matching(e) {
       if (!firstClickedCard) {
         firstClickedCard = e.target.parentNode;
@@ -91,8 +94,10 @@ window.onload = function() {
         ) {
           firstClickedCard.classList.add("matched");
           secondClickedCard.classList.add("matched");
-        //   firstClickedCard.classList.add("flip");
-        //   secondClickedCard.classList.add("flip");
+
+          localStorage.setItem("firstCard", firstClickedCard.innerText);
+          localStorage.setItem("secondCard", secondClickedCard.innerText);
+          // console.log("Local storage", localStorage.getItem('firstCard'), "%%%%%%%", localStorage.getItem('secondCard'))
 
           firstClickedCard.removeEventListener("click", matching);
           secondClickedCard.removeEventListener("click", matching);

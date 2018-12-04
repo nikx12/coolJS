@@ -1,5 +1,5 @@
 html {
-    background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+    background: #018DED url(https://farm5.staticflickr.com/4046/4174083155_514f554aac.jpg);
     background-size: cover;
     font-family: 'helvetica neue';
     text-align: center;
@@ -31,12 +31,13 @@ html {
     position: relative;
     width: 100%;
     height: 100%;
-    transform: translateY(-3px); /* account for the height of the clock hands */
+    transform: translateX(70px); /* account for the height of the clock hands */
+    /* transform: translateY(0px);  */
   }
   .hand {
     width: 50%;
     height: 6px;
     background: black;
-    position: absolute;
+    position: sticky;
     top: 50%;
   }
